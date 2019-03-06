@@ -1,0 +1,11 @@
+<section class="upcoming-container">
+    <h3 class="title clearfix">Upcoming<time>{{ currentTime | date:"yyyy-MM-dd" }}</time></h3>
+    <ul class="upcoming-list">
+        <li *ngFor="let item of upcomingList">
+            <h4 class="description">{{ item.description }}</h4>
+            <p class="date"><time>{{ item.time | date:"yyyy-MM-dd" }}</time></p>
+            <time class="time">{{item.time | date:"HH:mm"}}</time>
+            <i class="detail icon-next"></i>
+        </li>
+    </ul>
+</section>

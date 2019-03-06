@@ -1,0 +1,23 @@
+<div class="main-container">
+    <header class="text-center text-bold">
+        <button class="nav-btn"><i class="icon-nav"></i></button>
+        CALENDAR
+        <button class="add-btn"><i class="icon-add"></i></button>
+    </header>
+    <h3 class="month-title text-center">
+        <button class="prev-month-btn" (click)="prevMonth()"><i class="icon-prev"></i></button>
+        <span>{{ monthList[currentTime.getMonth()] }}</span>
+        <button class="next-month-btn" (click)="nextMonth()"><i class="icon-next"></i></button>
+    </h3>
+    <ul class="calendar clearfix">
+        <li class="week" *ngFor="let week of weeks">{{ week }}</li>
+        <li class="day" *ngFor="let day of [].constructor(getRow() * 7); index as i"
+            (click)="chooseDate(getDate(i))"
+            [ngClass]="{
+                'today': getDate(i).getTime() === now.getTime(),
+                'cur-month': getDate(i).getMonth() === currentTime.getMonth(),
+                'active': selectedDate && getDate(i).getTime() === selectedDate.getTime()
+            }">{{ getDate(i) | date:"dd" }}</li>
+    </ul>
+</div>
+<upcoming [currentTime]="selectedDate"></upcoming>

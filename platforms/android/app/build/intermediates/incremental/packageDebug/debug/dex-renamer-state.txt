@@ -1,0 +1,4 @@
+#Tue Mar 05 15:12:25 CST 2019
+base.0=C\:\\Users\\yongzhe.han\\Desktop\\cordova\\hello\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

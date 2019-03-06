@@ -1,0 +1,186 @@
+.main-container {
+    background-color: #FFFFFF;
+}
+header {
+    height: 60px;
+    line-height: 60px;
+    color: #B3B6C1;
+    .nav-btn, .add-btn {
+        width: 60px;
+        height: 60px;
+        background: none;
+        border: none;
+        color: #FFFFFF;
+        display: flex;
+
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        cursor: pointer;
+        &::before {
+            content: "";
+            width: 150%;
+            height: 150%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+    }
+    .nav-btn {
+        left: 0;
+        &::before {
+            background-color: #87D8CA;
+            border-radius: 10% 40% 55% 40%;
+            box-shadow: 0 0 20px 1px rgba(135, 216, 202, 0.5);
+        }
+        .icon-nav {
+            width: 30px;
+            height: 2px;
+            display: block;
+            background-color: #FFFFFF;
+            border-radius: 1px;
+            margin: 0 auto;
+            position: relative;
+            left: 10px;
+            top: 5px;
+            &::before, &::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: #FFFFFF;
+                border-radius: 1px;
+                position: absolute;
+                right: 10px;
+            }
+            &::before {
+                bottom: 12px;
+            }
+            &::after {
+                top: 12px;
+            }
+        }
+    }
+    .add-btn {
+        right: 0;
+        cursor: pointer;
+        &::before {
+            background-color: #FF9751;
+            border-radius: 40% 10% 40% 55%;
+            box-shadow: 0 0 20px 1px rgba(255, 151, 81, 0.5);
+        }
+        .icon-add {
+            width: 29px;
+            height: 29px;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            right: 3px;
+            top: 5px;
+            &::before, &::after {
+                content: "";
+                border-radius: 1px;
+                background-color: #FFFFFF;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+            }
+            &::before {
+                width: 100%;
+                height: 3px;
+                margin-left: -13px;
+            }
+            &::after {
+                width: 3px;
+                height: 100%;
+                margin-top: -13px;
+            }
+        }
+    }
+}
+.month-title {
+    margin-top: 20px;
+    padding: 25px 0;
+    position: relative;
+    span {
+        cursor: pointer;
+    }
+    .prev-month-btn, .next-month-btn {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #DADADA;
+        font-size: 20px;
+        background: none;
+        border: none;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .prev-month-btn {
+        left: 0;
+    }
+    .next-month-btn {
+        right: 0;
+    }
+}
+.calendar {
+    width: 50*7px;
+    margin: 0 auto;
+    li {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        float: left;
+        color: #CACCD5;
+        position: relative;
+        z-index: 0;
+        transition: color 0.3s;
+        cursor: pointer;
+        &::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: 0.3s;
+        }
+        &.week {
+            color: #343951;
+            border-radius: 0;
+            border-bottom: 1px solid #F2F2F2;
+            cursor: default;
+        }
+        &.cur-month {
+            color: #343951;
+        }
+        &.today {
+            color: #FFFFFF;
+            border-radius: 25px;
+            background-color: #FFB72B;
+            box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+            &.active {
+                background: none;
+                box-shadow: none;
+            }
+        }
+        &.active {
+            color: #FFFFFF;
+            &::before {
+                width: 100%;
+                height: 100%;
+                background-color: #46C4F3;
+                box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+body, p, ol, ul, li, dl, dt, dd  { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0 }
+body, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat-Medium"; margin: 0; padding: 0; }
+body { max-width: 100%; overflow:hidden; font-size: 20px; background-color: #F8FAFA; }
+button { outline: none; }
+
+.clearfix::after { content: ""; display: block; clear: both; }
+
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.icon-next, .icon-prev {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+.icon-prev::before,
+.icon-prev::after,
+.icon-next::before,
+.icon-next::after {
+    content: "";
+    width: 1em;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.icon-prev::before {
+    transform-origin: 0 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.icon-prev::after {
+    transform-origin: 0 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.icon-next::before {
+    transform-origin: 100% 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.icon-next::after {
+    transform-origin: 100% 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("./Montserrat-Medium.ttf");
+}
